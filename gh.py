@@ -9,16 +9,14 @@ gdb.execute("b *main+77")
 
 gdb.execute("r < payload")
 
-gdb.execute("x/40x $rsp")
+gdb.execute("x/20x $rsp")
 gdb.execute("c")
 
 # End of main
-gdb.execute("x/40x $rsp")
+gdb.execute("x/20x $rsp")
 
 time.sleep(1)
 
-gdb.execute("si")
-
-time.sleep(5)
-
 gdb.execute("s")
+
+gdb.execute("x/20x $rsp")
